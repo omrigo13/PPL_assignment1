@@ -5,7 +5,7 @@ const stringToArray = R.split("");
 /* Question 1 */
 export const countVowels: (s: string) => number = (s) => {
     const lowerArr: string[] = stringToArray(s.toLowerCase());
-    const vowelsArr: string[] = lowerArr.filter((cur: string): boolean => (cur === 'a' || cur === 'e' || cur === 'i' || cur === 'o' || cur === 'u'));
+    const vowelsArr: string[] = lowerArr.filter((ch: string): boolean => (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u'));
     return vowelsArr.length;
 };
 
