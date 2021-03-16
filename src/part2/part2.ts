@@ -9,7 +9,6 @@ export const countVowels: (s: string) => number = (s) => {
     return vowelsArr.length;
 };
 
-//should check what happens when a char appears once like "d" => should be d1 or only d after the compress
 /* Question 2 */
 export const runLengthEncoding = (s: string): string => {
     return stringToArray(s).reduce((acc: string, cur: string): string => acc[acc.length - 2] === cur ?
