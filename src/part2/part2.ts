@@ -16,4 +16,15 @@ export const runLengthEncoding = (s: string): string => {
 };
 
 /* Question 3 */
-export const isPaired = undefined;
+export const isPaired = (s: string): boolean => {
+    const pairs: string[] = stringToArray(s).filter((s: string): boolean => (s === '(' || s === ')' || s === '[' || s === ']' || s === '{' || s === '}'))
+    const isOpen = (s: string): boolean => (s === "(" || s === "[" || s === "{");
+    const isPair = (open: string, close: string): boolean => {
+        return (open === "(" && close === ")") || (open === "[" && close === "]") || (open === "{" && close === "}");
+    }
+    const checkPairs: string = pairs.reduce((acc: string, cur: string): string =>
+    isOpen(cur) ? acc + cur:
+    acc.length === 0 ? cur:
+    isPair(acc[acc.length - 1], cur) ? acc.substring(0, acc.length - 1) : "not paired", "");
+    return checkPairs === "";
+};
