@@ -24,6 +24,8 @@ const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
     }
 }
 
-export const returnSquaredIfFoundEven_v2 = undefined;
+export const returnSquaredIfFoundEven_v2 = (a: number[]): Result<number> => {
+    return bind(findResult((x: number) => x % 2 === 0, a), (x: number): Result<number> => makeOk(x * x));
+};
 
 export const returnSquaredIfFoundEven_v3 = undefined;
