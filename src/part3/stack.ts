@@ -2,7 +2,9 @@ import { State, bind } from "./state";
 
 export type Stack = number[];
 
-export const push = undefined;
+export const push = (x: number): State<Stack, undefined> => {
+    return initialState => [[x].concat(initialState), undefined];
+};
 
 export const pop = undefined;
 
